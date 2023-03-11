@@ -25,6 +25,11 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
         outState.putInt(KEY_COUNT, counter);
     }
+        @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        counter = savedInstanceState.getInt(KEY_COUNT);
+    }
     public void Click (View view){
         counter++;
         TextView text = (TextView)findViewById(R.id.txt_counter);
